@@ -73,6 +73,15 @@ class Order(Resource):
         }
         mydata['Ordered'].append(ordered_item)
         return make_response(render_template('Order.html', items=mydata['Ordered']), 201)
+        
+    def delete(self, name):
+        for i in mydata['Ordered']:
+            if name == i['name']:
+                items = mydata['Ordered']
+                if mydata['Ordered'][items.index(i)]['quantity'] > 0:
+                    mydata['Ordered'][items.index(i)]['quantity'] -= 1
+                    return make_response(render_template('Order.html', items=mydata['Ordered']), 200)
+        return make_response("404 - The requested item could not be found. ", 404)
 
 app = Flask(__name__)
 api = Api(app)

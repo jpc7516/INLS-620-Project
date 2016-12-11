@@ -9,6 +9,22 @@
             <p class="quantity">Quantity: {{ item.quantity }}</p>
             <form class="remove-item" action="" method="DELETE">
                 <input class="remove" type="submit" value="Remove">
+                <script>
+                var form = document.querySelector('form.remove-item');
+                var button = document.querySelector('form.remove-item input.remove');
+                button.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    var request = new XMLHttpRequest();
+                    request.open('DELETE', window.location.pathname);
+                    request.onreadystatechange = function () {
+                        if (XMLHttpRequest.DONE === request.readyState 
+                        && 200 === request.status) {
+                            window.location.reload(true);
+                            }
+                        }
+                    request.send(new FormData(form));
+                }, false);
+                </script>
             </form>
         </li>
         <br>
