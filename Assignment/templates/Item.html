@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<title>{{ item.name }}</title>
+<body>
+    <h1 class="title">{{ item.name }}</h1>
+    <br>
+    <img class="picture" src="images/{{ item.image }}" alt="grocery item image">
+    <p class="description">{{ item.description }}</p>
+    <br>
+    <form class="add-item" action="/order" method="POST">
+        <label>Quantity
+            <input class="quantity" name="quantity" type="number" min="1">    
+        </label>
+        <input class="name" name="name" type="hidden" value="{{ item.name }}">
+        <input class="link" name="link" type="hidden" value="{{ request.path }}">
+        <input class="add" type="submit" value="Add to order">
+    </form>
+    <br>
+    <a rel="collection" href="/catalog">Back to item catalog</a>
+    <br>
+    <a rel="order" href="/order">Order Form</a>
+
+</body>

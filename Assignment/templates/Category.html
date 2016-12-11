@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<title>{{ products.title }}</title>
+<body>
+    <h1 class="title">{{ products.title }}</h1>
+    <h2 class="subtitle">Available Items</h2>
+    <ol>
+        {% for product in products.products %}
+        <li class="item" name="{{ product.name }}">
+            <a rel="item" href="/catalog/{{ products.title.lower() }}/{{ product.name.lower() }}">{{ product.name }}</a>
+        </li>
+        {% endfor %}
+    </ol>
+    <br>
+    <a rel="order" href="/order">Order Form</a>
+    <br>
+    <a rel="collection" href="/catalog">Back to item catalog</a>
+</body>

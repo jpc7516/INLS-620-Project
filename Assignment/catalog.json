@@ -1,0 +1,70 @@
+{
+  "Categories": 
+    { 
+      "Fruits" :
+      { "title" : "Fruits",
+        "description" : "All sorts of fruits.",
+        "products" : [
+            {
+              "name" : "Apples",
+              "image" : "apple.jpeg",
+              "description" : "A bag of freshly picked Fuju apples. You'll find them to be crunchy, sweet and delicious. Weight: 5 lb"
+            },
+            {
+              "name" : "Oranges",
+              "image" : "orange.jpeg",
+              "description" : "A bag of orange oranges. Weight: 5 lb"
+            },
+            {
+              "name" : "Bananas",
+              "image" : "banana.jpeg",
+              "description" : "A bunch of bananas. Weight: 2 lb"
+            }
+          ]
+      },
+      
+      "Poultry":
+      { "title" : "Poultry",
+        "description" : "All sorts of poultry.",
+        "products" : [
+            {
+              "name" : "Chicken Thighs",
+              "image" : "chicken_thigh.jpeg",
+              "description" : "Fresh chicken thighs, boneless and skinless. 2 lb"
+            },
+            {
+              "name" : "Chicken Breast",
+              "image" : "chicken_breast.jpeg",
+              "description" : "Boneless, skinless, lean chicken breast. 1.5 lb"
+            },
+            {
+              "name" : "Ground Turkey",
+              "image" : "ground_turkey.jpeg",
+              "description" : "85% lean meat, 15% fat ground turkey. Weight: 2 lb"
+            }
+          ]
+      },
+      
+      "Vegetables":
+      { "title" : "Vegetables",
+        "description" : "All sorts of vegetables",
+        "products" : [
+            {
+              "name" : "Broccoli",
+              "image" : "broccoli.jpeg",
+              "description" : "A big 'ol broccoli crown. Weight: 1 lb"
+            },
+            {
+              "name" : "Celery",
+              "image" : "celery.jpeg",
+              "description" : "No one would buy this, right? Weight: 1 lb"
+            },
+            {
+              "name" : "Kale",
+              "image" : "kale.jpeg",
+              "description" : "Leafy green kale, fresh. Weight: 1 lb"
+            }
+          ]
+      }
+    }
+}

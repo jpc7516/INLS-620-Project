@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<title>Items to be Ordered</title>
+<body>
+    <h1 class="title">Items to be Ordered</h1>
+    <ol>
+        {% for item in items %}
+        <li class="ordered-item" name="{{ item.name }}">
+            <a rel="item" href="{{ item.link }}">{{ item.name }}</a>
+            <p class="quantity">Quantity: {{ item.quantity }}</p>
+            <form class="remove-item" action="" method="DELETE">
+                <input class="remove" type="submit" value="Remove">
+            </form>
+        </li>
+        <br>
+        {% endfor %}
+    </ol>
+    <br>
+    <a rel="collection" href="/catalog">Item Catalog</a>
+    <br>
+    <a rel="payment" href="/payment">Pay for Order</a>
+    
+</body>
