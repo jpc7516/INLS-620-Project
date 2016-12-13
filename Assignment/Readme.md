@@ -82,6 +82,9 @@ https://schema.org/PriceSpecification
 https://schema.org/Product
 * Any offered product, such as a grocery item.
 
+https://schema.org/OfferCatalog
+* An item list that contains related Offers.
+
 https://schema.org/Offer
 * Denotes an offer to sell an item, in this case a grocery item.
 
@@ -113,6 +116,9 @@ offer
 
 image
 * An image of the item. 
+
+itemListElement
+* An element of an item list or OfferCatalog
 
 priceCurrency
 * The currency (in 3-letter ISO 4217 format) of the price or a price component, when attached to PriceSpecification and its subtypes.
