@@ -1,4 +1,4 @@
-Class Attributes:
+##Class Attributes:
 
 title
 * Contains the name of the page.
@@ -43,7 +43,7 @@ total_price
 * Describes the total prices of all ordered items.
 
 
-Link Relations:
+##Link Relations:
 
 collection (from official registry)
 * Target resource represents the collection resource for the context resource (an item).
@@ -60,7 +60,7 @@ item (from official registry)
 item_ref
 * Indicates a resource that is the item of reference for an order form item
     
-Microdata Types:
+##Microdata Types:
 
 https://schema.org/Service
 * Denotes a provided service (e.g. delivery).
@@ -83,7 +83,7 @@ https://schema.org/PropertyValue
 https://schema.org/Invoice
 * A statement of the money due for goods or services
 
-Microdata Properties:
+##Microdata Properties:
 
 name
 * The name of the general item
