@@ -1,19 +1,19 @@
 Class Attributes:
 
 title
-*Contains the name of the page.
+* Contains the name of the page.
 
 subtitle
-*Contains the subtitle of the page.
+* Contains the subtitle of the page.
     
 category
-*Describes a category of items for sale.
+* Describes a category of items for sale.
     
 item
-*Describes an individual item for sale.
+* Describes an individual item for sale.
 
 ordered-item 
-*Describes an individual item in the order form. Contains a link to the matching item for sale.
+* Describes an individual item in the order form. Contains a link to the matching item for sale.
     
 picture
     May appear in an item. Contains an image of the item.
