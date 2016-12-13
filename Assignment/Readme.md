@@ -4,6 +4,8 @@ __Jeffrey Chen__
 
 __Machine-readable access through HTML+Microdata.__
 
+_Could not get the DELETE method to work, tried PATCH, which didn't work either. I am not good at javascript..._
+
 ##Class Attributes:
 
 title
