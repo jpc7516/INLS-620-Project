@@ -1,0 +1,80 @@
+{
+  "Categories": 
+    { 
+      "Fruits" :
+      { "title" : "Fruits",
+        "description" : "All sorts of fruits.",
+        "products" : [
+            {
+              "name" : "Apples",
+              "image" : "https://s3.amazonaws.com/cdwebimages/products/40171.jpg",
+              "description" : "A bag of freshly picked Fuju apples. You'll find them to be crunchy, sweet and delicious. Weight: 5 lb",
+              "price": 4.99
+            },
+            {
+              "name" : "Oranges",
+              "image" : "http://atleastimpretty.com/wp-content/uploads/2015/03/oranges-bag.jpg",
+              "description" : "A bag of orange oranges. Weight: 5 lb",
+              "price": 2.99
+            },
+            {
+              "name" : "Bananas",
+              "image" : "http://childsaversblog.org/wp-content/uploads/2014/06/bananas1.jpeg",
+              "description" : "A bunch of bananas. Weight: 2 lb",
+              "price": 2.59
+            }
+          ]
+      },
+      
+      "Poultry":
+      { "title" : "Poultry",
+        "description" : "All sorts of poultry.",
+        "products" : [
+            {
+              "name" : "Chicken-Thighs",
+              "image" : "http://images.realfoodtoronto.com/P/The-Healthy-Butcher-Organic-Bone-in-Chicken-Thigh.jpg",
+              "description" : "Fresh chicken thighs, boneless and skinless. 2 lb",
+              "price": 5.59
+            },
+            {
+              "name" : "Chicken-Breast",
+              "image" : "http://howtocookchickenbreast.com/wp-content/uploads/2015/08/RawChickenBreast.jpg",
+              "description" : "Boneless, skinless, lean chicken breast. 1.5 lb",
+              "price": 6.99
+            },
+            {
+              "name" : "Ground-Turkey",
+              "image" : "https://isitbadforyou.s3.amazonaws.com/uploads/article/pictures/1005/big_is_ground_turkey_bad_for_you.jpg",
+              "description" : "85% lean meat, 15% fat ground turkey. Weight: 2 lb",
+              "price": 4.59
+            }
+          ]
+      },
+      
+      
+      "Vegetables":
+      { "title" : "Vegetables",
+        "description" : "All sorts of vegetables",
+        "products" : [
+            {
+              "name" : "Broccoli",
+              "image" : "http://wallpapersdsc.net/wp-content/uploads/2016/09/Broccoli-Photos.jpg",
+              "description" : "A big 'ol broccoli crown. Weight: 1 lb",
+              "price": 1.59
+            },
+            {
+              "name" : "Celery",
+              "image" : "https://draxe.com/wp-content/uploads/2015/04/bigstock-Fresh-green-celery-isolated-on-52080031.jpg",
+              "description" : "No one would buy this, right? Weight: 1 lb",
+              "price": 1.00
+            },
+            {
+              "name" : "Kale",
+              "image" : "https://upload.wikimedia.org/wikipedia/commons/4/4b/Kale-Bundle.jpg",
+              "description" : "Leafy green kale, fresh. Weight: 1 lb",
+              "price": 1.59
+            }
+          ]
+      }
+    }
+}
