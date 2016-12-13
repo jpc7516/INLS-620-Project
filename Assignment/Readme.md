@@ -106,7 +106,7 @@ sameAs
 * URL of a reference Web page that unambiguously indicates the item's identity.
 
 category
-* A category for the item.
+* A category of the item.
 
 offer  
 * An offer to sell a product.

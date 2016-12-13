@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <title>{{ products.title }}</title>
-<body itemscope itemtype="https://schema.org/SomeProducts">
+<body itemscope itemtype="https://schema.org/OfferCatalog">
     <h1 itemprop="name" class="title">{{ products.title }}</h1>
     <h2 itemprop="description" class="subtitle">Available Items</h2>
     <ol>
         {% for product in products.products %}
-        <li itemprop="category"
+        <li itemprop="itemListElement"
             itemscope
             itemtype="https://schema.org/Product"
             class="item" >
