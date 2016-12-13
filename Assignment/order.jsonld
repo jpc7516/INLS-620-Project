@@ -4,13 +4,15 @@
         {
             "name" : "Apples",
             "quantity" : 2,
-            "link" : "/catalog/fruit/apples"
+            "link" : "/catalog/fruits/apples",
+            "price": 9.98
         },
         
         {
             "name" : "Bananas",
             "quantity" : 2,
-            "link" : "/catalog/fruit/bananas"
+            "link" : "/catalog/fruits/bananas",
+            "price": 5.18
         }
     ]
 }

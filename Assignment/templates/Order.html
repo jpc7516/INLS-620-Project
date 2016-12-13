@@ -4,28 +4,39 @@
     <h1 class="title">Items to be Ordered</h1>
     <ol>
         {% for item in items %}
-        <li class="ordered-item" name="{{ item.name }}">
-            <a rel="item" href="{{ item.link }}">{{ item.name }}</a>
-            <p class="quantity">Quantity: {{ item.quantity }}</p>
-            <form class="remove-item" action="" method="DELETE">
-                <input class="remove" type="submit" value="Remove">
-                <script>
-                var form = document.querySelector('form.remove-item');
-                var button = document.querySelector('form.remove-item input.remove');
-                button.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    var request = new XMLHttpRequest();
-                    request.open('DELETE', window.location.pathname);
-                    request.onreadystatechange = function () {
-                        if (XMLHttpRequest.DONE === request.readyState 
-                        && 200 === request.status) {
-                            window.location.reload(true);
+        <li itemscope class="ordered-item" name="{{ item.name }}">
+            <div itemscope itemtype="https://schema.org/Product">
+                <a itemprop="url" itemprop="sameAs" rel="item-ref" href="{{ item.link }}">
+                    <span itemprop="name">{{ item.name }}</span>
+                </a>
+                <p itemprop="additionalProperty" itemscope itemtype="https://schema.org/PropertyValue" class="quantity">
+                    <span itemprop="value">Quantity: {{ item.quantity }}</span>
+                </p>
+                <p itemprop="additionalProperty" itemscope itemtype="https://schema.org/PropertyValue" class="price">
+                    <span itemprop="value">Price: ${{ item.price }}</span>
+                </p>
+                <form class="remove-item" action="" method="PATCH">
+                    <input class="name" name="name" type="hidden" value="{{ item.name }}">
+                    <input class="remove" type="submit" value="Remove">
+                    <script>
+                    var form = document.querySelector('form.remove-item');
+                    var a = document.querySelector('.name')
+                    var button = document.querySelector('form.remove-item input.remove');
+                    button.addEventListener('click', function (event) {
+                        event.preventDefault();
+                        var request = new XMLHttpRequest();
+                        request.open('PATCH', "{{ (request.path + item.name)|safe }}");
+                        request.onreadystatechange = function () {
+                            if (XMLHttpRequest.DONE === request.readyState 
+                            && 200 === request.status) {
+                                window.location.reload(true);
+                                }
                             }
-                        }
-                    request.send(new FormData(form));
-                }, false);
-                </script>
-            </form>
+                        request.send(new FormData(form));
+                    }, false);
+                    </script>
+                </form>
+            </div>
         </li>
         <br>
         {% endfor %}

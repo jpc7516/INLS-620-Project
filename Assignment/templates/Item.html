@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <title>{{ item.name }}</title>
-<body>
-    <h1 class="title">{{ item.name }}</h1>
-    <br>
-    <img class="picture" src="images/{{ item.image }}" alt="grocery item image">
-    <p class="description">{{ item.description }}</p>
+<body itemscope itemtype="https://schema.org/Product">
+    <h1 itemprop="name" class="title">{{ item.name }}</h1>
+    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+        <br>
+        <img class="picture" itemprop="image" src="{{ item.image }}" width=300px alt="grocery item image of: {{ item.name }}">
+        <p class="description" itemprop="description">{{ item.description }}</p>
+        <span itemprop="priceCurrency" content="USD">$</span>
+        <span itemprop="price">{{ item.price }}</span>
+    </div>
     <br>
     <form class="add-item" action="/order" method="POST">
         <label>Quantity
             <input class="quantity" name="quantity" type="number" min="1">    
         </label>
         <input class="name" name="name" type="hidden" value="{{ item.name }}">
+        <input class="price" name="price" type="hidden" value="{{ item.price }}">
         <input class="link" name="link" type="hidden" value="{{ request.path }}">
         <input class="add" type="submit" value="Add to order">
     </form>

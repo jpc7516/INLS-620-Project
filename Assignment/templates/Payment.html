@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <title>Payment</title>
-<body>
-    <h1 class="title">Payment</h1>
-    <form class="payment" action="" method="POST">
-        <label>Name
-            <input class="name" type="text">
-        </label>
-        <label>Credit Card
-            <input class="card-number" type="text">
-        </label>
-        <input class="pay" type="submit" value="Pay">
-    </form>
-    <a rel="order" href="Order.html">Back to Order</a>
+<body itemscope itemtype="https://schema.org/Invoice">
+    <h1 itemprop="name" class="title">Payment</h1>
+    <p itemprop="minimumPaymentDue" itemscope itemtype="https://schema.org/PriceSpecification" class="total_price">Total: <span itemprop="price">${{ order|sum(attribute='price') }}</span></price></p>
+    <div itemprop="paymentMethod">
+        <p>Enter Credit Card Details:</p>
+        <form class="payment" action="" method="POST">
+            <label>Name
+                <input class="name" type="text">
+            </label>
+            <label>Credit Card #
+                <input class="card-number" type="text">
+            </label>
+            <input class="pay" type="submit" value="Pay">
+        </form>
+    </div>
+    <br>
+    <a rel="order" href="/order">Back to Order</a>
 </body>

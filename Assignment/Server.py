@@ -9,22 +9,22 @@ from functools import wraps
 from datetime import datetime
 
 #Load catalog json file as data
-with open('catalog.json') as data:
+with open('catalog.jsonld') as data:
     data = json.load(data)
 
 #Load order json file as data
-with open('order.json') as mydata:
+with open('order.jsonld') as mydata:
     mydata = json.load(mydata)
 
-#print data['Categories']['Fruit']['products'][0]
-    
 item_parser = reqparse.RequestParser()
 item_parser.add_argument(
     'name', type=str, required=True)
 item_parser.add_argument(
     'quantity', type=int, default=1, required=True)
 item_parser.add_argument(
-    'link', type=str, required=True) 
+    'link', type=str, required=True)
+item_parser.add_argument(
+    'price', type=float, default=1, required=True)
     
 #Define catalog resource
 class Catalog(Resource):
@@ -53,7 +53,7 @@ class Item(Resource):
 #Define payment resource
 class Payment(Resource):
     def get(self):
-        return make_response(render_template('Payment.html'), 200)
+        return make_response(render_template('Payment.html', order=mydata['Ordered']), 200)
 
 #Define order resource
 class Order(Resource):
@@ -69,14 +69,15 @@ class Order(Resource):
         ordered_item = {
             "name" : item['name'],
             "quantity" : item['quantity'],
-            "link" : item['link']
+            "link" : item['link'],
+            "price": (item['price']*item['quantity'])
         }
         mydata['Ordered'].append(ordered_item)
         return make_response(render_template('Order.html', items=mydata['Ordered']), 201)
         
-    def delete(self, name):
+    def patch(self):
         for i in mydata['Ordered']:
-            if name == i['name']:
+            if self == i['name']:
                 items = mydata['Ordered']
                 if mydata['Ordered'][items.index(i)]['quantity'] > 0:
                     mydata['Ordered'][items.index(i)]['quantity'] -= 1

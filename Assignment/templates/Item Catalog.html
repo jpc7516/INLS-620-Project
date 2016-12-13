@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <title>Available Items</title>
-<body>
-    <h1 class="title">Jeffrey's Shoddy Online Grocery Service</h1>
-    <h2 class="subtitle">Choose a Category</h2>
+<body itemscope itemtype="https://schema.org/Service">
+    <h1 itemprop="name" class="title">Jeffrey's Shoddy Online Grocery Service</h1>
+    <h2 itemprop="description" class="subtitle">Browse Available Product Categories</h2>
     <ol>
         {% for key, category in categories.items() %}
-        <li itemscope
+        <li itemprop="category" 
+            itemscope 
             itemtype="https://schema.org/SomeProducts"
             class="category" 
             name="{{ key }}">
-            <a rel="item" href="/catalog/{{ key }}" itemprop="url"> <span itemprop="name">{{ category.title }}</span></a>
-            <p itemprop="description">Description: {{ category.description }}</p>
+                <a itemprop="url" rel="item" href="/catalog/{{ key }}"> 
+                    <span itemprop="name">{{ category.title }}</span>
+                </a>
+                <p itemprop="description">Description: {{ category.description }}</p>
         </li>
         {% endfor %}
     </ol>

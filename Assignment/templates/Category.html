@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <title>{{ products.title }}</title>
-<body>
-    <h1 class="title">{{ products.title }}</h1>
-    <h2 class="subtitle">Available Items</h2>
+<body itemscope itemtype="https://schema.org/SomeProducts">
+    <h1 itemprop="name" class="title">{{ products.title }}</h1>
+    <h2 itemprop="description" class="subtitle">Available Items</h2>
     <ol>
         {% for product in products.products %}
-        <li class="item" name="{{ product.name }}">
-            <a rel="item" href="/catalog/{{ products.title.lower() }}/{{ product.name.lower() }}">{{ product.name }}</a>
+        <li itemprop="category"
+            itemscope
+            itemtype="https://schema.org/Product"
+            class="item" >
+                <a itemprop="url" rel="item" href="/catalog/{{ products.title.lower() }}/{{ product.name.lower() }}">
+                    <span itemprop="name">{{ product.name }}</span>
+                </a>
         </li>
         {% endfor %}
     </ol>
