@@ -9,11 +9,11 @@ from functools import wraps
 from datetime import datetime
 
 #Load catalog json file as data
-with open('catalog.jsonld') as data:
+with open('catalog.json') as data:
     data = json.load(data)
 
 #Load order json file as data
-with open('order.jsonld') as mydata:
+with open('order.json') as mydata:
     mydata = json.load(mydata)
 
 item_parser = reqparse.RequestParser()
