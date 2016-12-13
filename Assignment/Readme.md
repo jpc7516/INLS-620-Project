@@ -1,32 +1,37 @@
 Class Attributes:
 
-title:
+title
     Contains the name of the page.
-subtitle:
+
+subtitle
     Contains the subtitle of the page.
-category:
+    
+category
     Describes a category of items for sale.
-item:
+    
+item
     Describes an individual item for sale.
-ordered-item:
+
+ordered-item 
     Describes an individual item in the order form. Contains a link to the matching item for sale.
-picture:
+    
+picture
     May appear in an item. Contains an image of the item.
-description:
+description
     May appear in an item. Contains a description of the item.
-add-item:
+add-item
     Used to describe a form for adding an item.
-quantity:
+quantity
     Describes the number of items.
-add:
+add
     Used to describe a form input that designates the adding of an item.
-remove-item:
+remove-item
     Used to describe a form for removing an item.
-remove:
+remove
     Used to describe a form input that designates the removal of an item.
-price: 
+price 
     Describes the price of an item or items (depending on quantity).
-total_price:
+total_price
     Describes the total prices of all ordered items.
 
 
