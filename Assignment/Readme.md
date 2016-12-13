@@ -1,13 +1,13 @@
 Class Attributes:
 
 title
-    Contains the name of the page.
+Contains the name of the page.
 
 subtitle
-    Contains the subtitle of the page.
+Contains the subtitle of the page.
     
 category
-    Describes a category of items for sale.
+Describes a category of items for sale.
     
 item
     Describes an individual item for sale.
