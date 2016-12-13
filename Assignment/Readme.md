@@ -1,3 +1,9 @@
+#INLS-620 Online Grocery Service
+
+__Jeffrey Chen__
+
+__Machine-readable access through HTML+Microdata.__
+
 ##Class Attributes:
 
 title
