@@ -15,23 +15,22 @@
                 <p itemprop="additionalProperty" itemscope itemtype="https://schema.org/PropertyValue" class="price">
                     <span itemprop="value">Price: ${{ item.price }}</span>
                 </p>
-                <form class="remove-item" action="" method="PATCH">
-                    <input class="name" name="name" type="hidden" value="{{ item.name }}">
-                    <input class="remove" type="submit" value="Remove">
+                <form class="remove-item-{{ loop.index }}" action="" method="PATCH">
+                    <input type="hidden" name="remove" value="{{ item.name }}">
+                    <input class="remove" type="button" value="Remove">
                     <script>
-                    var form = document.querySelector('form.remove-item');
-                    var a = document.querySelector('.name')
-                    var button = document.querySelector('form.remove-item input.remove');
+                    var form = document.querySelector('form.remove-item-{{ loop.index }}');
+                    var button = document.querySelector('form.remove-item-{{ loop.index }} input.remove');
                     button.addEventListener('click', function (event) {
                         event.preventDefault();
                         var request = new XMLHttpRequest();
-                        request.open('PATCH', "{{ (request.path + item.name)|safe }}");
+                        request.open('PATCH', window.location.pathname);
                         request.onreadystatechange = function () {
-                            if (XMLHttpRequest.DONE === request.readyState 
-                            && 200 === request.status) {
-                                window.location.reload(true);
-                                }
-                            }
+                          if (XMLHttpRequest.DONE === request.readyState 
+                              && 200 === request.status) {
+                            window.location.reload(true);
+                          }
+                        }
                         request.send(new FormData(form));
                     }, false);
                     </script>

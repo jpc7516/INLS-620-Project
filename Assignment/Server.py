@@ -25,7 +25,13 @@ item_parser.add_argument(
     'link', type=str, required=True)
 item_parser.add_argument(
     'price', type=float, default=1, required=True)
-    
+
+
+patch_parser = reqparse.RequestParser()
+patch_parser.add_argument('remove', type=str)
+patch_parser.add_argument('add', type=str)
+
+
 #Define catalog resource
 class Catalog(Resource):
     def get(self):
@@ -76,13 +82,11 @@ class Order(Resource):
         return make_response(render_template('Order.html', items=mydata['Ordered']), 201)
         
     def patch(self):
-        for i in mydata['Ordered']:
-            if self == i['name']:
-                items = mydata['Ordered']
-                if mydata['Ordered'][items.index(i)]['quantity'] > 0:
-                    mydata['Ordered'][items.index(i)]['quantity'] -= 1
-                    return make_response(render_template('Order.html', items=mydata['Ordered']), 200)
-        return make_response("404 - The requested item could not be found. ", 404)
+        patch = patch_parser.parse_args()
+        for index, i in enumerate(mydata['Ordered']):
+            if patch['remove'] == i['name']:
+                del mydata['Ordered'][index]
+        return make_response(render_template('Order.html', items=mydata['Ordered']), 200)
 
 app = Flask(__name__)
 api = Api(app)
